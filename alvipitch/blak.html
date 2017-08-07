@@ -1,4 +1,63 @@
 <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>myOAuth</title>
+
+    <!--Reference platform.js library here-->
+    <!--Reference Client ID in meta tag here-->
+    <!--
+    645993865132-ggb99oni20f4efdqed60vobsg88iomst.apps.googleusercontent.com-->
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <meta name="google-signin-client_id" content="645993865132-ggb99oni20f4efdqed60vobsg88iomst.apps.googleusercontent.com">
+
+
+    <!--jquery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!--custom files-->
+    <script src="lib/js/main.js"></script>
+    <link rel="stylesheet" href="lib/css/style.css">
+</head>
+
+<body>
+    <div class="signs">
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <a href="#" class="signOut" onclick="onSignOut();">Sign out</a>
+    </div>
+
+
+    <div class="mainContainer">
+        <!--Text greeting user-->
+        <header>
+            <h1>WELCOME <span class="userName">PLAYER</span></h1>
+        </header>
+
+        <!--Populate section with user data-->
+        <section>
+            <!--picture-->
+            <div class="userImg">
+                <img src="assets/placeholder.png">
+            </div>
+
+            <!--User Data-->
+            <div class="userData">
+                <h2>Your email:</h2>
+                <p class="email">example@example.com</p>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
+
+
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -9,20 +68,18 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
     <!--main js-->
-
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="alviitch.css" href="https://www.w3schools.com/w3css/3/w3.css">
     <!--some style!-->
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.js"></script>
-    <script src="alvipitch.js"></script>
     <style>
         body {
             text-align: center;
             color: black;
             background-color: white;
             background-size: cover;
-            background: url ("https://stellar.mit.edu/im/star_logo-trans.png");
-            background-size: cover;
+            background: url ("https://stellar.mit.edu/im/star_logo-trans.png (11kB)
+ ");
+ background-size: cover;
         }
 
         img {
@@ -31,17 +88,46 @@
     </style>
 
 
+    <style>
+        <div>id="myContainer">#myContainer {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            background: yellow;
+        }
 
+        #myAnimation {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background-color: black;
+        }
+    </style>
 </head>
 
 <body>
 
     <p>
-        <button onclick=p () id="button"> Click The Button to Lorem Ipsum!!!</button>
+        <button onclick="myMove()">Click The Button to Lorem Ipsum!!!</button>
+        <div id="myAnimation"></div>
+        </div>
 
-
-    </p>
-
+        <script>
+            function myMove() {
+                var elem = document.getElementById("myAnimation");
+                var pos = 0;
+                var id = setInterval(frame, 10);
+                function frame() {
+                    if (pos == 350) {
+                        clearInterval(id);
+                    } else {
+                        pos++;
+                        elem.style.top = pos + 'px';
+                        elem.style.left = pos + 'px';
+                    }
+                }
+            }
+        </script>
 
 </body>
 
